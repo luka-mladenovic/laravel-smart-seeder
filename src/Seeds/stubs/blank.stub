@@ -1,0 +1,26 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class DummyClass extends Seeder
+{
+    /**
+     * Run the seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        //
+    }
+
+    /**
+     * Revert the seeds.
+     *
+     * @return void
+     */
+    public function revert()
+    {
+        //
+    }
+}
