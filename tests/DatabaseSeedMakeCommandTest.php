@@ -1,7 +1,7 @@
 <?php
+namespace Tests;
 
 use Mockery as m;
-use PHPUnit\Framework\TestCase;
 use Illuminate\Support\Composer;
 use Illuminate\Foundation\Application;
 use Lukam\SmartSeeder\Seeds\SeedCreator;

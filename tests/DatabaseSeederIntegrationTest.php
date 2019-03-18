@@ -1,8 +1,8 @@
 <?php
+namespace Tests;
 
 use Mockery as m;
 use Illuminate\Support\Str;
-use PHPUnit\Framework\TestCase;
 use Illuminate\Console\OutputStyle;
 use Illuminate\Container\Container;
 use Lukam\SmartSeeder\Seeds\Seeder;

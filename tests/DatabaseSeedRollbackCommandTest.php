@@ -1,9 +1,8 @@
 <?php
 
-namespace Illuminate\Tests\Database;
+namespace Tests;
 
 use Mockery as m;
-use PHPUnit\Framework\TestCase;
 use Lukam\SmartSeeder\Seeds\Seeder;
 use Illuminate\Foundation\Application;
 use Lukam\SmartSeeder\Console\RollbackCommand;

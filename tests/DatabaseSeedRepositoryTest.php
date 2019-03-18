@@ -1,8 +1,9 @@
 <?php
+namespace Tests;
 
-// use Closure;
+use Closure;
+use stdClass;
 use Mockery as m;
-use PHPUnit\Framework\TestCase;
 use Illuminate\Support\Collection;
 use Illuminate\Database\Connection;
 use Lukam\SmartSeeder\Seeds\DatabaseSeedRepository;
