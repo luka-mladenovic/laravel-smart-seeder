@@ -113,7 +113,17 @@ class SeedCreator
      */
     protected function getPath($name, $path)
     {
-        return $path.'/'.$name.'.php';
+        return $path.'/'.$this->getDatePrefix().'_'.$name.'.php';
+    }
+
+    /**
+     * Get the date prefix for the migration.
+     *
+     * @return string
+     */
+    protected function getDatePrefix()
+    {
+        return date('Y_m_d_His');
     }
 
     /**
