@@ -382,6 +382,7 @@ class Seeder
             $name = get_class($seed);
 
             $this->note("<info>{$name}:</info> {$query['query']}");
+            $this->note($query['bindings']);
         }
     }
 
