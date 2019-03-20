@@ -46,6 +46,7 @@ class DatabaseMigrateResetCommandTest extends TestCase
         $migrator->shouldReceive('repositoryExists')->once()->andReturn(true);
         $migrator->shouldReceive('reset')->once()->with([__DIR__.DIRECTORY_SEPARATOR.'migrations'], false);
         $migrator->shouldReceive('getNotes')->andReturn([]);
+        $migrator->shouldReceive('setOutput')->zeroOrMoreTimes()->andReturn($migrator);
 
         return $migrator;
     }

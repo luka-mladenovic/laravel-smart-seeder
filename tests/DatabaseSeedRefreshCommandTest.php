@@ -22,7 +22,7 @@ class DatabaseSeedRefreshCommandTest extends TestCase
     {
         $command = new RefreshCommand($seeder = m::mock(Seeder::class));
 
-        $app = new ApplicationDatabaseRefreshStub(['path.database' => __DIR__]);
+        $app = new ApplicationDatabaseRefreshStub(['path.database' => __DIR__, 'env' => 'development']);
         $console = m::mock(ConsoleApplication::class)->makePartial();
         $console->__construct();
         $command->setLaravel($app);
@@ -45,7 +45,7 @@ class DatabaseSeedRefreshCommandTest extends TestCase
     {
         $command = new RefreshCommand($seeder = m::mock(Seeder::class));
 
-        $app = new ApplicationDatabaseRefreshStub(['path.database' => __DIR__]);
+        $app = new ApplicationDatabaseRefreshStub(['path.database' => __DIR__, 'env' => 'development']);
         $console = m::mock(ConsoleApplication::class)->makePartial();
         $console->__construct();
         $command->setLaravel($app);
@@ -94,9 +94,5 @@ class ApplicationDatabaseRefreshStub extends Application
         foreach ($data as $abstract => $instance) {
             $this->instance($abstract, $instance);
         }
-    }
-    public function environment()
-    {
-        return 'development';
     }
 }
