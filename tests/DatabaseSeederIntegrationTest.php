@@ -104,8 +104,6 @@ class DatabaseSeederIntegrationTest extends TestCase
 
     public function testNoErrorIsThrownWhenNothingToRollback()
     {
-
-
         $this->seeder->run([__DIR__.'/seeds/one']);
 
         $this->seeder->rollback([__DIR__.'/seeds/one']);

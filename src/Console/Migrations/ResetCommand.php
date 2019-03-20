@@ -7,18 +7,21 @@ use Illuminate\Database\Console\Migrations\ResetCommand as MigrateResetCommand;
 class ResetCommand extends MigrateResetCommand
 {
     /**
-     * When the migration is reset drop the seeds table.
+     * Drop the seeds table when migration is reset.
      *
      * @return void
      */
     public function handle()
     {
-        parent::handle();
-
         $database = $this->input->getOption('database');
+        $pretend = $this->input->getOption('pretend');
 
-        $this->laravel['db']->connection($database)
+        if(!$pretend) {
+            $this->laravel['db']->connection($database)
                 ->getSchemaBuilder()
                 ->dropIfExists('seeds');
+        }
+
+        parent::handle();
     }
 }

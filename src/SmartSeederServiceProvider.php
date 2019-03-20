@@ -6,6 +6,7 @@ use Lukam\SmartSeeder\Seeds\Seeder;
 use Lukam\SmartSeeder\Console\Seeds;
 use Illuminate\Support\ServiceProvider;
 use Lukam\SmartSeeder\Seeds\SeedCreator;
+use Lukam\SmartSeeder\Console\Migrations;
 use Lukam\SmartSeeder\Seeds\DatabaseSeedRepository;
 
 class SmartSeederServiceProvider extends ServiceProvider
@@ -16,7 +17,8 @@ class SmartSeederServiceProvider extends ServiceProvider
         'SeedStatus'    => 'command.seed.status',
         'SeedInstall'   => 'command.seed.install',
         'SeedRefresh'   => 'command.seed.refresh',
-        'SeedRollback'  => 'command.seed.rollback'
+        'SeedRollback'  => 'command.seed.rollback',
+        'MigrateReset'  => 'command.migrate.reset',
     ];
 
     protected $devCommands = [
@@ -190,6 +192,18 @@ class SmartSeederServiceProvider extends ServiceProvider
     {
         $this->app->singleton('command.seed.refresh', function ($app) {
             return new Seeds\RefreshCommand($app['seeder']);
+        });
+    }
+
+    /**
+     * Register the command.
+     *
+     * @return void
+     */
+    protected function registerMigrateResetCommand()
+    {
+        $this->app->singleton('command.migrate.reset', function ($app) {
+            return new Migrations\ResetCommand($app['migrator']);
         });
     }
 
