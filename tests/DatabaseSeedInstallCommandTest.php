@@ -3,9 +3,9 @@ namespace Tests;
 
 use Mockery as m;
 use Illuminate\Foundation\Application;
-use Lukam\SmartSeeder\Console\InstallCommand;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\NullOutput;
+use Lukam\SmartSeeder\Console\Seeds\InstallCommand;
 use Lukam\SmartSeeder\Seeds\SeedRepositoryInterface;
 
 class DatabaseSeedInstallCommandTest extends TestCase

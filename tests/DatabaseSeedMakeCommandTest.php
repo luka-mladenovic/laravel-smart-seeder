@@ -5,9 +5,9 @@ use Mockery as m;
 use Illuminate\Support\Composer;
 use Illuminate\Foundation\Application;
 use Lukam\SmartSeeder\Seeds\SeedCreator;
-use Lukam\SmartSeeder\Console\SeedMakeCommand;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\NullOutput;
+use Lukam\SmartSeeder\Console\Seeds\SeedMakeCommand;
 
 class DatabaseSeedMakeCommandTest extends TestCase
 {

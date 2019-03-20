@@ -1,6 +1,6 @@
 <?php
 
-namespace Lukam\SmartSeeder\Console;
+namespace Lukam\SmartSeeder\Console\Seeds;
 
 use Illuminate\Support\Collection;
 use Lukam\SmartSeeder\Seeds\Seeder;

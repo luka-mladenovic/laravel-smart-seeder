@@ -1,6 +1,6 @@
 <?php
 
-namespace Lukam\SmartSeeder\Console;
+namespace Lukam\SmartSeeder\Console\Seeds;
 
 use Lukam\SmartSeeder\Seeds\Seeder;
 use Illuminate\Console\ConfirmableTrait;

@@ -4,9 +4,9 @@ namespace Tests;
 use Mockery as m;
 use Lukam\SmartSeeder\Seeds\Seeder;
 use Illuminate\Foundation\Application;
-use Lukam\SmartSeeder\Console\ResetCommand;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\NullOutput;
+use Lukam\SmartSeeder\Console\Seeds\ResetCommand;
 
 class DatabaseSeedResetCommandTest extends TestCase
 {

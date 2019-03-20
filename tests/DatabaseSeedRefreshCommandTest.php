@@ -4,11 +4,11 @@ namespace Tests;
 use Mockery as m;
 use Lukam\SmartSeeder\Seeds\Seeder;
 use Illuminate\Foundation\Application;
-use Lukam\SmartSeeder\Console\SeedCommand;
-use Lukam\SmartSeeder\Console\RefreshCommand;
-use Lukam\SmartSeeder\Console\RollbackCommand;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\NullOutput;
+use Lukam\SmartSeeder\Console\Seeds\SeedCommand;
+use Lukam\SmartSeeder\Console\Seeds\RefreshCommand;
+use Lukam\SmartSeeder\Console\Seeds\RollbackCommand;
 use Symfony\Component\Console\Application as ConsoleApplication;
 
 class DatabaseSeedRefreshCommandTest extends TestCase

@@ -2,8 +2,8 @@
 
 namespace Lukam\SmartSeeder;
 
-use Lukam\SmartSeeder\Console;
 use Lukam\SmartSeeder\Seeds\Seeder;
+use Lukam\SmartSeeder\Console\Seeds;
 use Illuminate\Support\ServiceProvider;
 use Lukam\SmartSeeder\Seeds\SeedCreator;
 use Lukam\SmartSeeder\Seeds\DatabaseSeedRepository;
@@ -16,7 +16,7 @@ class SmartSeederServiceProvider extends ServiceProvider
         'SeedStatus'    => 'command.seed.status',
         'SeedInstall'   => 'command.seed.install',
         'SeedRefresh'   => 'command.seed.refresh',
-        'SeedRollback'  => 'command.seed.rollback',
+        'SeedRollback'  => 'command.seed.rollback'
     ];
 
     protected $devCommands = [
@@ -117,7 +117,7 @@ class SmartSeederServiceProvider extends ServiceProvider
     protected function registerSeedInstallCommand()
     {
         $this->app->singleton('command.seed.install', function ($app) {
-            return new Console\InstallCommand($app['seed.repository']);
+            return new Seeds\InstallCommand($app['seed.repository']);
         });
     }
 
@@ -129,7 +129,7 @@ class SmartSeederServiceProvider extends ServiceProvider
     protected function registerSeedMakeCommand()
     {
         $this->app->singleton('command.seed.make', function ($app) {
-            return new Console\SeedMakeCommand($app['seed.creator'], $app['composer']);
+            return new Seeds\SeedMakeCommand($app['seed.creator'], $app['composer']);
         });
     }
 
@@ -141,7 +141,7 @@ class SmartSeederServiceProvider extends ServiceProvider
     protected function registerSeedStatusCommand()
     {
         $this->app->singleton('command.seed.status', function ($app) {
-            return new Console\StatusCommand($app['seeder']);
+            return new Seeds\StatusCommand($app['seeder']);
         });
     }
 
@@ -153,7 +153,7 @@ class SmartSeederServiceProvider extends ServiceProvider
     protected function registerSeedRunCommand()
     {
         $this->app->singleton('command.seed.run', function ($app) {
-            return new Console\SeedCommand($app['seeder']);
+            return new Seeds\SeedCommand($app['seeder']);
         });
     }
 
@@ -165,7 +165,7 @@ class SmartSeederServiceProvider extends ServiceProvider
     protected function registerSeedRollbackCommand()
     {
         $this->app->singleton('command.seed.rollback', function ($app) {
-            return new Console\RollbackCommand($app['seeder']);
+            return new Seeds\RollbackCommand($app['seeder']);
         });
     }
 
@@ -177,7 +177,7 @@ class SmartSeederServiceProvider extends ServiceProvider
     protected function registerSeedResetCommand()
     {
         $this->app->singleton('command.seed.reset', function ($app) {
-            return new Console\ResetCommand($app['seeder']);
+            return new Seeds\ResetCommand($app['seeder']);
         });
     }
 
@@ -189,7 +189,7 @@ class SmartSeederServiceProvider extends ServiceProvider
     protected function registerSeedRefreshCommand()
     {
         $this->app->singleton('command.seed.refresh', function ($app) {
-            return new Console\RefreshCommand($app['seeder']);
+            return new Seeds\RefreshCommand($app['seeder']);
         });
     }
 

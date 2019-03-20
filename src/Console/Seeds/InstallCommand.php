@@ -1,6 +1,6 @@
 <?php
 
-namespace Lukam\SmartSeeder\Console;
+namespace Lukam\SmartSeeder\Console\Seeds;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
