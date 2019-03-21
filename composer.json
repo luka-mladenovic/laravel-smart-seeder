@@ -1,6 +1,6 @@
 {
     "name": "lukam/smart-seeder",
-    "description": "",
+    "description": "Package to make handling of the seeder files easier by adding the commands to create, run, and rollback seed files",
     "type": "library",
     "license": "MIT",
     "authors": [
